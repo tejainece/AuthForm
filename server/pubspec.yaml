@@ -1,0 +1,16 @@
+name: Heroes
+description: An absolute bare-bones web app.
+version: 0.0.1
+homepage: https://github.com/Hexer10
+author: Mattia <hexer504@gmail.com>
+
+environment:
+  sdk: '>=2.0.0-dev.68.0 <2.0.0'
+
+dependencies:
+    http: ^0.11.0
+    stream_transform: ^0.0.6
+    angular_components: ^0.9.0-beta+1
+    jaguar: ^2.1.30
+    cryptoutils: ^0.3.0
+    reflectable: any
