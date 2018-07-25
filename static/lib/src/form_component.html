@@ -1,0 +1,52 @@
+<!-- #docregion final -->
+<div class="container">
+    <!-- #docregion edit-div -->
+    <h1>Register Form</h1>
+    <!-- #docregion ngSubmit -->
+    <form (ngSubmit)="onSubmit()" #authForm="ngForm">
+        <!-- #enddocregion ngSubmit, edit-div -->
+        <div class="form-group">
+            <!-- #docregion name-with-error-message -->
+            <label for="name">Username&nbsp;*</label>
+            <input type="text" class="form-control" id="name" required
+                   [(ngModel)]="model.name"
+                   #name="ngForm"
+                   [class.is-valid]="name.valid"
+                   [class.is-invalid]="!name.valid"
+                   ngControl="name">
+            <!-- #docregion hidden-error-message -->
+            <div [hidden]="name.valid || name.pristine" class="invalid-feedback">
+                Username is required
+            </div>
+            <!-- #enddocregion hidden-error-message, name-with-error-message -->
+        </div>
+        <div class="form-group">
+            <label for="password">Alter Ego</label>
+            <input type="text" class="form-control" id="password" required
+                   [(ngModel)]="model.password"
+                   #password="ngForm"
+                   [class.is-valid]="password.valid"
+                   [class.is-invalid]="!passowrd.valid"
+                   ngControl="password">
+            <!-- #docregion hidden-error-message -->
+            <div [hidden]="password.valid || password.pristine" class="invalid-feedback">
+                Password is required
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <!-- #docregion Submit-button -->
+                <button [disabled]="!authForm.form.valid" type="submit" class="btn btn-primary">
+                    Submit
+                </button>
+                <!-- #enddocregion Submit-button -->
+                <!-- #docregion Clear-button -->
+                <button (click)="clear()" type="button" class="btn">
+                    Clear
+                </button>
+                <!-- #enddocregion Clear-button -->
+            </div>
+            <small class="col text-right">*&nbsp;Required</small>
+        </div>
+    </form>
+</div>
